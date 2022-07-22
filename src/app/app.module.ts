@@ -15,6 +15,7 @@ import { MenuComponent } from './partial/menu/menu.component';
 import { MaintenanceComponent } from './pages/maintenance/maintenance.component';
 import { MainComponent } from './admin/main/main.component';
 import { PostsComponent } from './pages/posts/posts.component';
+import { CommentsComponent } from './pages/comments/comments.component';
 
 @NgModule({
   declarations: [
@@ -29,14 +30,15 @@ import { PostsComponent } from './pages/posts/posts.component';
     MenuComponent,
     MaintenanceComponent,
     MainComponent,
-    PostsComponent
+    PostsComponent,
+    CommentsComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [PostsComponent, CommentsComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -9,6 +9,8 @@ import { NotfoundComponent } from './pages/notfound/notfound.component';
 import { MaintenanceComponent } from './pages/maintenance/maintenance.component';
 import { AuthGuard } from './guard/auth.guard';
 import { MainComponent } from './admin/main/main.component';
+import { PostsComponent } from './pages/posts/posts.component';
+import { CommentsComponent } from './pages/comments/comments.component';
 
 
 const routes:Routes = [
@@ -26,6 +28,12 @@ const routes:Routes = [
   },
   {
     path:'login', component: LoginComponent, title:"Login"
+  },
+  {
+    path: 'posts', component: PostsComponent, title: "Posts", data: { pageRouteName: 'Posts' }
+  },
+  {
+    path: 'comments', component: CommentsComponent, title: "Comments", data: { pageRouteName: 'comments' }
   },
   {
     path:'maintenance', component: MaintenanceComponent, title:"Maintenance"
