@@ -8,11 +8,11 @@ import { Posts, Comments } from '../interfaces/posts';
 export class PostsService {
   constructor(private http: HttpClient) {}
 
-  getPosts() {
+  getofPosts() {
     return this.http.get<Posts>('http://localhost:3000/post');
   }
 
-  getComments() {
+  getofComments() {
     return this.http.get<Comments>('http://localhost:3000/comments');
   }
 }

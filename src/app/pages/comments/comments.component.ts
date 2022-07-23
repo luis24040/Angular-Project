@@ -15,11 +15,11 @@ export class CommentsComponent implements OnInit {
   constructor(private service: PostsService) {
     const postID = new URLSearchParams(window.location.search).get('id');
     // Get posts
-    this.service.getPosts().subscribe(({ data: postsData }) => {
-      this.post = postsData.filter(({ id }) => Number(postID) === id);
-      const newDate = new Date(this.post[0].date);
-      this.post[0].day = newDate.getDate() || 1;
-      this.post[0].month = newDate.toLocaleString('default', {
+    this.service.getofPosts().subscribe(({ data: postsD }) => {
+      this.post = postsD.filter(({ id }) => Number(postID) === id);
+      const DateNew = new Date(this.post[0].date);
+      this.post[0].day = DateNew.getDate() || 1;
+      this.post[0].month = DateNew.toLocaleString('default', {
         month: 'short',
       });
 
@@ -27,9 +27,9 @@ export class CommentsComponent implements OnInit {
       this.postFound = true;
       // Get comments
       this.service
-        .getComments()
-        .subscribe(({ data: commentsData }: Comments) => {
-          this.comments = commentsData.filter(
+        .getofComments()
+        .subscribe(({ data: commentsD }: Comments) => {
+          this.comments = commentsD.filter(
             ({ idpost }) => Number(postID) === idpost
           );
         });
